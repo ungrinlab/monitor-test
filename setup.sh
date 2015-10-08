@@ -24,9 +24,9 @@ tar xvjf libusb-1.0.9.tar.bz2
 unzip PhidgetsPython.zip
 
 #Clean up - remove phidget library tar file - unneccessary now
-rm libphidget.tar.gz
-rm libusb-1.0.9.tar.bz2
-rm PhidgetsPython.zip
+rm -f libphidget.tar.gz
+rm -f libusb-1.0.9.tar.bz2
+rm -f PhidgetsPython.zip
 
 #Install Libusb
 cd /home/pi/phidgets/libusb-1.0.9 #move into the directory
@@ -102,14 +102,14 @@ tar -xvf pChart2.1.3.tar
 mv pChart2.1.3 pChart
 
 #Delete the tar file
-rm pChart2.1.3.tar
+rm -f pChart2.1.3.tar
 
 #Downloading script package and necessary monitoring system files
 echo "Downloading necessary monitoring system scripts..."
 cd /var/www
 sudo wget https://raw.githubusercontent.com/ungrinlab/monitor/master/web_files.zip
 unzip web_files.zip
-rm web_files.zip
+rm -f web_files.zip
 
 cd /home/pi/phidgets
 sudo wget https://raw.githubusercontent.com/ungrinlab/monitor/master/monitoringsystem.py
