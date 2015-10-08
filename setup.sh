@@ -87,8 +87,6 @@ sudo usermod -a -G www-data pi
 #INSTALLING PCHART MODULES
 echo "INSTALLING PCHART MODULES"
 
-#Run this script from /home/pi directory
-cd /home/pi
 #move to /var/www
 cd /var/www
 
@@ -99,17 +97,17 @@ sudo wget https://raw.githubusercontent.com/ungrinlab/monitor/master/pChart2.1.3
 tar -xvf pChart2.1.3.tar
 
 #Rename
-mv pChart2.1.3 pChart
+sudo mv pChart2.1.3 pChart
 
 #Delete the tar file
-rm -f pChart2.1.3.tar
+sudo rm -f pChart2.1.3.tar
 
 #Downloading script package and necessary monitoring system files
 echo "Downloading necessary monitoring system scripts..."
 cd /var/www
 sudo wget https://raw.githubusercontent.com/ungrinlab/monitor/master/web_files.zip
-unzip web_files.zip
-rm -f web_files.zip
+sudo unzip web_files.zip
+sudo rm -f web_files.zip
 
 cd /home/pi/phidgets
 sudo wget https://raw.githubusercontent.com/ungrinlab/monitor/master/monitoringsystem.py
