@@ -94,7 +94,7 @@ cd /var/www
 sudo wget https://raw.githubusercontent.com/ungrinlab/monitor/master/pChart2.1.3.tar
 
 #Extract
-tar -xvf pChart2.1.3.tar
+sudo tar -xvf pChart2.1.3.tar
 
 #Rename
 sudo mv pChart2.1.3 pChart
@@ -119,8 +119,7 @@ sudo wget https://raw.githubusercontent.com/ungrinlab/monitor/master/blink_IP.sh
 sudo chmod a+x blink_IP.sh
 
 #Setting up CRONJOB
-cd
-mkdir /var/www/logs
+sudo mkdir /var/www/logs
 line='*       *       *       *       *       python /home/pi/phidgets/monitoringsystem.py  > /var/www/logs/most_recent_scan.log'
 (sudo crontab -u root -l; echo "$line" ) | sudo crontab -u root -
 line='*     *       *       *       *       /home/pi/scripts/blink_IP.sh 1 &> /dev/null'
