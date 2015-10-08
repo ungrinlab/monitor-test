@@ -14,9 +14,9 @@ cd /home/pi/phidgets/
 echo "INSTALLING PHIDGET COMPATIBILITY MODULES"
 
 #Download Phidget Libraries- this will save it to /home/pi/phidgets
-sudo wget https://github.com/ungrinlab/monitor/blob/master/libphidget.tar.gz
-sudo wget https://github.com/ungrinlab/monitor/blob/master/libusb-1.0.9.tar.bz2
-sudo wget https://github.com/ungrinlab/monitor/blob/master/PhidgetsPython.zip
+sudo wget https://raw.githubusercontent.com/ungrinlab/monitor/master/libphidget.tar.gz
+sudo wget https://raw.githubusercontent.com/ungrinlab/monitor/master/libusb-1.0.9.tar.bz2
+sudo wget https://raw.githubusercontent.com/ungrinlab/monitor/master/PhidgetsPython.zip
 
 #Extract Libraries
 tar -xzvf libphidget.tar.gz
@@ -93,7 +93,7 @@ cd /home/pi
 cd /var/www
 
 #Download pChart package
-sudo wget https://github.com/ungrinlab/monitor/blob/master/pChart2.1.3.tar
+sudo wget https://raw.githubusercontent.com/ungrinlab/monitor/master/pChart2.1.3.tar
 
 #Extract
 tar -xvf pChart2.1.3.tar
@@ -107,17 +107,17 @@ rm pChart2.1.3.tar
 #Downloading script package and necessary monitoring system files
 echo "Downloading necessary monitoring system scripts..."
 cd /var/www
-sudo wget https://github.com/ungrinlab/monitor/blob/master/web_files.zip
+sudo wget https://raw.githubusercontent.com/ungrinlab/monitor/master/web_files.zip
 unzip web_files.zip
 rm web_files.zip
 
 cd /home/pi/phidgets
-sudo wget https://github.com/ungrinlab/monitor/blob/master/monitoringsystem.py
+sudo wget https://raw.githubusercontent.com/ungrinlab/monitor/master/monitoringsystem.py
 
 
 #install script to blink out the IP address using the Pi's red LED, so user does not need to hook up a monitor to find the machine if the IP changes
 cd /home/pi/scripts
-sudo wget https://github.com/ungrinlab/monitor/blob/master/blink_IP.sh
+sudo wget https://raw.githubusercontent.com/ungrinlab/monitor/master/blink_IP.sh
 sudo chmod a+x blink_IP.sh
 
 #Setting up CRONJOB
