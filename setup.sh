@@ -65,6 +65,13 @@ sudo lighty-enable-mod fastcgi-php
 #Install GD Extension for pCHart to work:
 sudo apt-get install php5-gd
 
+#Change the lighttpd default directory
+sudo cat /etc/lighttpd/lighttpd.conf | perl -pe "s/(server.document-root\s*= )\".*?\"/\1\"\/var\/www\"/g" | sudo tee /etc/lighttpd/lighttpd.conf.repl
+sudo rm -f /etc/lighttpd/lighttpd.conf
+sudo mv  /etc/lighttpd/lighttpd.conf.repl /etc/lighttpd/lighttpd.conf
+
+
+
 #Once these packages are installed we can restart the Lighttpd service to pick up the changes :
 sudo service lighttpd force-reload
 
