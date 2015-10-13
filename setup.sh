@@ -46,7 +46,7 @@ sudo python setup.py install
 
 #Install ntpdate
 cd /home/pi
-sudo apt-get install ntpdate
+sudo apt-get -y install ntpdate
 
 #If the script errors you can follow these commands step by step on terminal while ssh'd into the pi@ip address.
 
@@ -63,7 +63,7 @@ sudo apt-get -y install php5-common php5-cgi php5
 sudo lighty-enable-mod fastcgi-php
 
 #Install GD Extension for pCHart to work:
-sudo apt-get install php5-gd
+sudo apt-get -y install php5-gd
 
 #Change the lighttpd default directory
 sudo cat /etc/lighttpd/lighttpd.conf | perl -pe "s/(server.document-root\s*= )\".*?\"/\1\"\/var\/www\"/g" | sudo tee /etc/lighttpd/lighttpd.conf.repl
